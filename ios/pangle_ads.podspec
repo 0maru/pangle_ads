@@ -17,6 +17,11 @@ Flutter Pangle Ad Plugin.
   s.dependency 'Flutter'
   s.platform = :ios, '9.0'
 
+  # Bytedance SDK start
+  s.static_framework = true
+  s.ios.dependency 'Bytedance-UnionAD', '~> 3.2'
+  # Bytedance SDK send
+
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
   s.swift_version = '5.0'
