@@ -1,14 +1,6 @@
 import Flutter
 import UIKit
 
-#if canImport(AppTrackingTransparency)
-import AppTrackingTransparency
-#endif
-
-#if canImport(AdSupport)
-import AdSupport
-#endif
-
 public class SwiftPangleAdsPlugin: NSObject, FlutterPlugin {
   private let methodChannel: FlutterMethodChannel
   
@@ -27,7 +19,7 @@ public class SwiftPangleAdsPlugin: NSObject, FlutterPlugin {
   // method handler
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
     let args = call.arguments as? [String: Any?] ?? [:]
-    let instance = PangleAdController.shared
+    let instance = FLTPangleAdController.shared
     
     switch call.method {
     case "init":
@@ -37,21 +29,6 @@ public class SwiftPangleAdsPlugin: NSObject, FlutterPlugin {
       instance.loadRewardAd()
     case "showRewardAd":
       instance.showRewardAd()
-    case "getTrackingStatus":
-      if #available(iOS 14.0, *) {
-        result(ATTrackingManager.trackingAuthorizationStatus.rawValue)
-      } else {
-        result(nil)
-      }
-    case "requestTrackingAuthorization":
-      if #available(iOS 14.0, *) {
-        ATTrackingManager.requestTrackingAuthorization(
-          completionHandler: { status in
-            result(status.rawValue)
-          })
-      } else {
-        result(nil)
-      }
     default:
       result(FlutterMethodNotImplemented)
     }
