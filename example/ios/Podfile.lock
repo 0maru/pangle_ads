@@ -1,0 +1,29 @@
+PODS:
+  - Bytedance-UnionAD (3.3.1.5)
+  - Flutter (1.0.0)
+  - pangle_ads (0.0.1):
+    - Bytedance-UnionAD (~> 3.2)
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - pangle_ads (from `.symlinks/plugins/pangle_ads/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Bytedance-UnionAD
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  pangle_ads:
+    :path: ".symlinks/plugins/pangle_ads/ios"
+
+SPEC CHECKSUMS:
+  Bytedance-UnionAD: 0166f1cc5d366f958b693546b7c897232a306ebb
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  pangle_ads: 2fec35ef21950c5a131892998674ac85d56d41df
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.0
