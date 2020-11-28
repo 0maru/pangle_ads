@@ -18,21 +18,21 @@ public class SwiftPangleAdsPlugin: NSObject, FlutterPlugin {
   
   // method handler
   public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    let controller = FLTPangleAdController.shared
     let args = call.arguments as? [String: Any?] ?? [:]
-    let instance = FLTPangleAdController.shared
-    
+
     switch call.method {
-    case "init":
-      instance.initialize(args)
-      result(nil)
-    case "loadRewardAd":
-      instance.loadRewardAd()
-    case "showRewardAd":
-      instance.showRewardAd()
-    default:
-      result(FlutterMethodNotImplemented)
+      case "init":
+        controller.initialize(args)
+        result(nil)
+      case "loadRewardAd":
+        controller.loadRewardAd(args, result: result)
+        result(nil)
+      case "showRewardAd":
+        controller.showRewardAd(args, result: result)
+        result(nil)
+      default:
+        result(FlutterMethodNotImplemented)
     }
   }
 }
-
-
