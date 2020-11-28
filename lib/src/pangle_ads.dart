@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 
-const METHOD_NAME = '0maru.github.com/pangle_ads';
+const METHOD_NAME = '0maru/pangle_ads';
 
 class PangleAds {
   static final _pangleAds = PangleAds._();
