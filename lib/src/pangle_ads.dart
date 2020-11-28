@@ -24,6 +24,15 @@ class PangleAds {
     throw PlatformException(code: 'This OS is not Supported.');
   }
 
+  Future<Map<String, dynamic>> loadReward() async {
+    if (Platform.isIOS) {
+      return _methodChannel.invokeMapMethod('loadReward');
+    } else if (Platform.isAndroid) {
+      return _methodChannel.invokeMapMethod('loadReward');
+    }
+    throw PlatformException(code: 'This os is not supported.');
+  }
+
   Future<Map<String, dynamic>> showReward() async {
     if (Platform.isIOS) {
       return await _methodChannel.invokeMapMethod('showRewardAd');
